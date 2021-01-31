@@ -18,8 +18,8 @@ const Transactions = () => (
         <tr>
           <td>Landlord</td>
           <td>Rent</td>
-          <th>Landord wants >50% of paycheck!</th>
-          <th>$1,800.00</th>
+          <th>Landord wants >50% of paycheck.... wt 🦆?</th>
+          <th>$1,600.00</th>
           <th></th>
         </tr>
         <tr>
@@ -27,7 +27,7 @@ const Transactions = () => (
           <td>Paycheck</td>
           <th></th>
           <th></th>
-          <th>$100.00</th>
+          <th>$1500.00</th>
         </tr>
       </tbody>
     </Table>
