@@ -6,6 +6,11 @@ const AddExpense = () => (
   <div >
     <br />
     <Form>
+      {/* not enough time to add */}
+      {/* <Form.Group controlId="exampleForm.ControlInput1">
+        <Form.Label>Date</Form.Label>
+        <Form.Control type="date" />
+      </Form.Group> */}
 
       <Form.Group controlId="exampleForm.ControlInput1">
         <Form.Label>Payee</Form.Label>
@@ -32,7 +37,7 @@ const AddExpense = () => (
 
       <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
         <Form.Label>Amount</Form.Label>
-        <Form.Control type="email" />
+        <Form.Control type="number" />
       </Form.Group>
 
       <Button variant="info" size="lg" block>Submit</Button>
