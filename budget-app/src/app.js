@@ -1,11 +1,10 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Header from './components/Header';
 
 
 const App = () => (
   <div>
-    <h1 className="display-4 mt-4 text-center text-info">Budget Expense Tracker</h1>
+    <Header />
   </div >
 );
 
