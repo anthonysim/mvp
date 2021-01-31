@@ -16,15 +16,10 @@ const App = () => (
     <Header />
     <Container>
       <Row>
-
         <Col><Totals /></Col>
-
         <Col sm={8}><AddExpense /></Col>
-
       </Row>
     </Container>
-
-    {/* <Totals /> */}
     <Transactions />
   </div >
 );

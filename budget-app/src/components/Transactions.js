@@ -8,7 +8,7 @@ const Transactions = () => (
       <thead>
         <tr>
           <th>Payee</th>
-          <th>Category</th>
+          <th>Type</th>
           <th>Memo</th>
           <th>Outflow</th>
           <th>Inflow</th>
@@ -17,15 +17,15 @@ const Transactions = () => (
       <tbody>
         <tr>
           <td>Landlord</td>
-          <td>Rent</td>
+          <td>Expense</td>
           <th>Landord wants >50% of paycheck.... wt 🦆?</th>
           <th>$1,600.00</th>
           <th></th>
         </tr>
         <tr>
           <td>Job</td>
-          <td>Paycheck</td>
-          <th></th>
+          <td>Income</td>
+          <th>Bi-Weekly Check Baby</th>
           <th></th>
           <th>$1500.00</th>
         </tr>

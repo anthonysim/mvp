@@ -18,14 +18,11 @@ const AddExpense = () => (
       </Form.Group>
 
       <Form.Group controlId="exampleForm.ControlSelect1">
-        <Form.Label>Category</Form.Label>
+        <Form.Label>Type</Form.Label>
         <Form.Control as="select">
-          <option>Education</option>
-          <option>Gas</option>
-          <option>Groceries</option>
-          <option>Insurance</option>
-          <option>Rent</option>
-          <option>Utilties</option>
+          <option>Income</option>
+          <option>Expense</option>
+
         </Form.Control>
       </Form.Group>
 
@@ -34,10 +31,9 @@ const AddExpense = () => (
         <Form.Control as="textarea" rows={1} />
       </Form.Group>
 
-
       <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
         <Form.Label>Amount</Form.Label>
-        <Form.Control type="number" />
+        <Form.Control type="text" />
       </Form.Group>
 
       <Button variant="info" size="lg" block>Submit</Button>
