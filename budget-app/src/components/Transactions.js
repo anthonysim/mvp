@@ -7,7 +7,6 @@ const Transactions = () => (
     <Table striped bordered hover size="sm">
       <thead>
         <tr>
-          <th>Date</th>
           <th>Payee</th>
           <th>Category</th>
           <th>Memo</th>
@@ -17,19 +16,17 @@ const Transactions = () => (
       </thead>
       <tbody>
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <th>I spend too much money</th>
-          <th>$50.00</th>
-          <th>$100.00</th>
+          <td>Landlord</td>
+          <td>Rent</td>
+          <th>Landord wants >50% of paycheck!</th>
+          <th>$1,800.00</th>
+          <th></th>
         </tr>
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <th>I spend too much money</th>
-          <th>$50.00</th>
+          <td>Job</td>
+          <td>Paycheck</td>
+          <th></th>
+          <th></th>
           <th>$100.00</th>
         </tr>
       </tbody>

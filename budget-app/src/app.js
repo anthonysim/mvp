@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Balance from './components/Balance';
 import Totals from './components/Totals';
 import Transactions from './components/Transactions';
+import AddExpense from './components/AddExpense';
 
 // Bootstrap
 import { Container, Row, Col } from 'react-bootstrap';
@@ -15,11 +16,15 @@ const App = () => (
     <Header />
     <Container>
       <Row>
-        <Col>TESTING</Col>
+
+        <Col><Totals /></Col>
+
+        <Col sm={8}><AddExpense /></Col>
+
       </Row>
     </Container>
 
-    <Totals />
+    {/* <Totals /> */}
     <Transactions />
   </div >
 );
