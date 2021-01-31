@@ -7,7 +7,7 @@ import Totals from './components/Totals';
 const App = () => (
   <div class="container text-center ">
     <Header />
-    <Balance />
+    {/* <Balance /> */}
     <Totals />
   </div >
 );
