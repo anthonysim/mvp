@@ -42,7 +42,7 @@ class Transaction extends Component {
             <Form.Label>Payee</Form.Label>
             <Form.Control
               value={this.state.payee}
-              onChange={e => this.setState({ payee: e.target.value.trim() })}
+              onChange={e => this.setState({ payee: e.target.value })}
               type="text" />
           </Form.Group>
 
@@ -50,7 +50,7 @@ class Transaction extends Component {
             <Form.Label >Type</Form.Label>
             <Form.Control
               value={this.state.type}
-              onChange={e => this.setState({ type: e.target.value.trim() })}
+              onChange={e => this.setState({ type: e.target.value })}
               as="select">
               <option>Income</option>
               <option>Expense</option>
@@ -62,7 +62,7 @@ class Transaction extends Component {
             <Form.Label>Memo</Form.Label>
             <Form.Control
               value={this.state.memo}
-              onChange={e => this.setState({ memo: e.target.value.trim() })}
+              onChange={e => this.setState({ memo: e.target.value })}
               as="textarea" rows={1} />
           </Form.Group>
 
@@ -70,7 +70,7 @@ class Transaction extends Component {
             <Form.Label>Amount</Form.Label>
             <Form.Control
               value={this.state.amount}
-              onChange={e => this.setState({ amount: e.target.value.trim() })}
+              onChange={e => this.setState({ amount: e.target.value })}
               type="text"
             />
           </Form.Group>
