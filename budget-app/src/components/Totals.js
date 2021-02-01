@@ -13,7 +13,7 @@ const Totals = () => (
         <ListGroup.Item ><h3 className="text-primary">$0.00</h3></ListGroup.Item>
 
         <h4 className="mt-3 text-info">Income</h4>
-        <ListGroup.Item ><h3 className="text-success">$0.00</h3></ListGroup.Item>
+        <ListGroup.Item ><h3 className="text-secondary">$0.00</h3></ListGroup.Item>
 
         <h4 className="mt-3 text-info">Expense</h4>
         <ListGroup.Item><h3 className="text-danger">-$0.00</h3></ListGroup.Item>
