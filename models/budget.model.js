@@ -1,27 +1,27 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 
-let Budget = new Schema({
-  Payee: {
-    type: String
+const Transaction = new Schema({
+  payee: {
+    type: String,
+    required: true
   },
 
-  Type: {
-    type: String
+  type: {
+    type: String,
+    required: true
   },
 
-  Memo: {
-    type: String
+  memo: {
+    type: String,
+    required: true
   },
 
-  Income: {
-    type: Number
-  },
-
-  Expense: {
-    type: Number
+  amount: {
+    type: Number,
+    required: true
   },
 })
 
-module.exports = mongoose.model('Budget', Budget);
+module.exports = mongoose.model('Transactions', Transaction);
