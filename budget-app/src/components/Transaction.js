@@ -35,8 +35,7 @@ class Transaction extends Component {
   render() {
     return (
       <div >
-        <br />
-        <Form>
+        <Form className="mt-sm-4 shadow p-3 mb-5 mt-1 bg-white rounded">
 
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Payee</Form.Label>

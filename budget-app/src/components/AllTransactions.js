@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 
 const AllTransactions = () => (
   <div>
-    <Table striped bordered hover size="sm" className="mt-sm-4">
+    <Table striped bordered hover size="sm" className="mt-sm-4 shadow p-3 mb-5 mt-1 bg-white rounded">
       <thead>
         <tr>
           <th>Payee</th>
