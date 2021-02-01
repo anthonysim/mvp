@@ -15,11 +15,11 @@ let Budget = new Schema({
     type: String
   },
 
-  Inflow: {
+  Income: {
     type: Number
   },
 
-  Outflow: {
+  Expense: {
     type: Number
   },
 })

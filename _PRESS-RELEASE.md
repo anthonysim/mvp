@@ -38,13 +38,16 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+"We wanted an application that can be easy to use and beneficial for individuals, families, organizations, etc. A way for them to keep track of their expenses so that better decisions can be made to ensure a better future!" - Jane Gill, CEO of Budget Tracker and Budget Tracker User
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  All you need to do is open up the app and add a transaction and that's it!
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "I didn't realize how much money I was spending on useless stuff, thank you Budget Tracker for getting my finances on track! I'm going to recommend Budget Tracker to all my friends and family on social media!" - Jack Calico, Insurance Salesman from Toledo, Ohio
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Please join our mailing list to get all the up-to-date information on Budget Tracker as well as Budget Tracker related products and news!
