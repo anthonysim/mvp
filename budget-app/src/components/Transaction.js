@@ -20,6 +20,16 @@ class Transaction extends Component {
     console.log(this.state.type)
     console.log(this.state.memo)
     console.log(this.state.amount)
+
+    // updates state to "blank" after submit
+    this.setState(prevState => {
+      return {
+        payee: "",
+        type: "Income",
+        memo: "",
+        amount: "",
+      }
+    })
   }
 
   render() {
