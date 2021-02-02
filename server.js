@@ -1,20 +1,20 @@
 const express = require('express')
 const dotenv = require('dotenv')
-const morgan = require('morgan')
 const mongoose = require('mongoose')
 const budgetRoutes = require('./routes/budget.routes')
-// const cors = require('cors');
+const cors = require('cors')
 
 // Path to DOTENV config file
 dotenv.config({ path: './configs/config.env' })
 
 const app = express()
 
+app.use(cors())
+
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// app.use(cors())
 
 // Routes pointing to routes folder
 app.use(budgetRoutes)

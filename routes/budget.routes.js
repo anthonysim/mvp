@@ -4,7 +4,7 @@ const { allTransactions, postTransaction } = require('../controllers/budget.cont
 
 
 router.get('/', allTransactions)
-router.post('/', postTransaction)
+router.post('/addtransaction', postTransaction)
 
 
 module.exports = router;
