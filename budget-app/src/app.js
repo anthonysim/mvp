@@ -15,15 +15,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      transactions: []
+      transactions: [],
     }
+    this.postHander = this.postHander.bind(this);
+  }
+
+  postHander() {
+    console.log('clicked')
   }
 
   componentDidMount() {
     axios.get('http://localhost:5000/')
       .then(res => this.setState(prevState => {
         return {
-          isLoading: false,
           transactions: res.data
         }
       }))
@@ -37,7 +41,7 @@ class App extends Component {
           <Row>
             {/* Summary of Balance, Income, and Expense */}
             <Col><Totals data={this.state.transactions} /></Col>
-            <Col sm={8}><Transaction /></Col>
+            <Col sm={8}><Transaction postFunc={this.postHander} /></Col>
           </Row>
         </Container>
         {/* List f all transactions below */}

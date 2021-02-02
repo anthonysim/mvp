@@ -18,10 +18,6 @@ class Transaction extends Component {
     e.preventDefault();
 
     let { payee, type, memo, amount } = this.state;
-    // console.log(payee)
-    // console.log(type)
-    // console.log(memo)
-    // console.log(amount)
 
     axios.post('http://localhost:5000/addtransaction', {
       payee,
@@ -41,8 +37,10 @@ class Transaction extends Component {
   }
 
   render() {
+
     return (
       <div >
+        <button onClick={this.props.postFunc}>Click Me!</button>
         <Form className="mt-sm-4 shadow p-3 mb-5 mt-1 bg-white rounded">
 
           <Form.Group controlId="exampleForm.ControlInput1">
