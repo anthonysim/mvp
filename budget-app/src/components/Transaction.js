@@ -14,9 +14,6 @@ class Transaction extends Component {
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
 
-
-
-
   onSubmitHandler(e) {
     e.preventDefault();
     console.log(this.state.payee)
@@ -36,6 +33,7 @@ class Transaction extends Component {
   }
 
   render() {
+
     return (
       <div >
         <Form className="mt-sm-4 shadow p-3 mb-5 mt-1 bg-white rounded">

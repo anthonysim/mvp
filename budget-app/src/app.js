@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Component } from "react";
 import axios from 'axios';
 
 // Components Folder
@@ -11,29 +11,41 @@ import Transaction from './components/Transaction';
 import { Container, Row, Col } from 'react-bootstrap';
 
 
-const App = () => {
-  const [data, setData] = useState({ transactions: [] });
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      transactions: []
+    }
+  }
 
-
-  useEffect(() => {
+  componentDidMount() {
     axios.get('http://localhost:5000/')
-      .then(res => setData(res.data))
-    // .then(res => console.log(res.data))
-  }, [])
+      .then(res => this.setState(prevState => {
+        return {
+          transactions: res.data
+        }
+      }))
+  }
 
 
-  return (
-    <div className="container text-center">
-      <Header />
-      <Container>
-        <Row>
-          <Col><Totals /></Col>
-          <Col sm={8}><Transaction /></Col>
-        </Row>
-      </Container>
-      <AllTransactions />
-    </div >
-  );
+
+  render() {
+    return (
+      < div className="container text-center" >
+        <Header />
+        <Container>
+          <Row>
+            {/* Summary of Balance, Income, and Expense */}
+            <Col><Totals data={this.state.transactions} /></Col>
+            <Col sm={8}><Transaction /></Col>
+          </Row>
+        </Container>
+        {/* List f all transactions below */}
+        <AllTransactions items={this.state.transactions} />
+      </div >
+    );
+  }
 }
 
 export default App;
