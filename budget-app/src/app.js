@@ -23,6 +23,7 @@ class App extends Component {
     axios.get('http://localhost:5000/')
       .then(res => this.setState(prevState => {
         return {
+          isLoading: false,
           transactions: res.data
         }
       }))

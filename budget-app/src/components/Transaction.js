@@ -16,27 +16,31 @@ class Transaction extends Component {
 
   onSubmitHandler(e) {
     e.preventDefault();
-    console.log(this.state.payee)
-    console.log(this.state.type)
-    console.log(this.state.memo)
-    console.log(this.state.amount)
 
-    // a post request to server --> db, update db
-    // get request to auto populate page
+    let { payee, type, memo, amount } = this.state;
+    // console.log(payee)
+    // console.log(type)
+    // console.log(memo)
+    // console.log(amount)
 
-    // updates state to "blank" after submit
-    this.setState(prevState => {
-      return {
-        payee: "",
-        type: "Income",
-        memo: "",
-        amount: "",
-      }
+    axios.post('http://localhost:5000/addtransaction', {
+      payee,
+      type,
+      memo,
+      amount
     })
+      .then(this.setState(prevState => {
+        return {
+          payee: "",
+          type: "Income",
+          memo: "",
+          amount: "",
+        }
+      }))
+      .catch(err => console.error(err))
   }
 
   render() {
-
     return (
       <div >
         <Form className="mt-sm-4 shadow p-3 mb-5 mt-1 bg-white rounded">

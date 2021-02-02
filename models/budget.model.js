@@ -24,4 +24,5 @@ const Transaction = new Schema({
   },
 })
 
+
 module.exports = mongoose.model('Transactions', Transaction);
