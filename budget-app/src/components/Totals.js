@@ -5,7 +5,7 @@ import { Card, ListGroup } from 'react-bootstrap';
 const Totals = ({ data }) => {
   const income = data.filter(({ type }) => type === 'Income').reduce((acc, val) => acc + val.amount, 0)
   const expense = data.filter(({ type }) => type === 'Expense').reduce((acc, val) => acc + val.amount, 0)
-  const balance = (income - expense) < 0 ? ('-$' + `${expense - income}`) : ('$' + `${income - expense}`)
+  const balance = (income - expense) < 0 ? ('-$' + `${(expense - income).toFixed(2)}`) : ('$' + `${(income - expense).toFixed(2)}`)
   // console.log(income)
   // console.log(expense)
   // console.log(balance)
@@ -22,11 +22,11 @@ const Totals = ({ data }) => {
 
           {/* Total Income */}
           <h4 className="mt-3 text-info">Income</h4>
-          <ListGroup.Item ><h3 className="text-secondary">${income}</h3></ListGroup.Item>
+          <ListGroup.Item ><h3 className="text-secondary">${income.toFixed(2)}</h3></ListGroup.Item>
 
           {/* Total Expense */}
           <h4 className="mt-3 text-info">Expense</h4>
-          <ListGroup.Item><h3 className="text-danger">-${expense}</h3></ListGroup.Item>
+          <ListGroup.Item><h3 className="text-danger">-${expense.toFixed(2)}</h3></ListGroup.Item>
 
         </ListGroup>
       </Card>

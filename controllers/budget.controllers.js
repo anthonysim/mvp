@@ -13,7 +13,6 @@ exports.allTransactions = (req, res) => {
 // posts one transaction
 exports.postTransaction = (req, res) => {
   const { payee, type, memo, amount } = req.body;
-
   if (!payee || !type || !memo || !amount) {
     res.json({ message: 'Please make sure all fields are filled in!' })
     return;

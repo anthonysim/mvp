@@ -21,6 +21,9 @@ class Transaction extends Component {
     console.log(this.state.memo)
     console.log(this.state.amount)
 
+    // a post request to server --> db, update db
+    // get request to auto populate page
+
     // updates state to "blank" after submit
     this.setState(prevState => {
       return {
