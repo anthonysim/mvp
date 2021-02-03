@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       transactions: [],
     }
-    // this.postHander = this.postHander.bind(this);
+
     this.transactionsHandler = this.transactionsHandler.bind(this);
   }
 
