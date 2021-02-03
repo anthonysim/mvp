@@ -14,11 +14,6 @@ class Transaction extends Component {
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
 
-  // notes on button click the submit handler fires
-  // first it posts to the db,
-  // then it fires this.post.postFunc which will get a get request to update
-  // transactions to render on the page.
-
   onSubmitHandler(e) {
     e.preventDefault();
 
@@ -30,6 +25,7 @@ class Transaction extends Component {
       memo,
       amount
     })
+      .then(() => this.props.postFunc())
       .then(this.setState(prevState => {
         return {
           payee: "",
@@ -38,7 +34,7 @@ class Transaction extends Component {
           amount: "",
         }
       }))
-      .then(() => this.props.postFunc())
+
       .catch(err => console.error(err))
   }
 

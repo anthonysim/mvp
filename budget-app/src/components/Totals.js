@@ -6,9 +6,7 @@ const Totals = ({ data }) => {
   const income = data.filter(({ type }) => type === 'Income').reduce((acc, val) => acc + val.amount, 0)
   const expense = data.filter(({ type }) => type === 'Expense').reduce((acc, val) => acc + val.amount, 0)
   const balance = (income - expense) < 0 ? ('-$' + `${(expense - income).toFixed(2)}`) : ('$' + `${(income - expense).toFixed(2)}`)
-  // console.log(income)
-  // console.log(expense)
-  // console.log(balance)
+
   return (
     < div >
       <br />

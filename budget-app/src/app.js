@@ -20,7 +20,8 @@ class App extends Component {
     this.postHander = this.postHander.bind(this);
   }
 
-  postHander(e) {
+  postHander() {
+
     axios.get('http://localhost:5000/')
       .then(res => this.setState(prevState => {
         return {
