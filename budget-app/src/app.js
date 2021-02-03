@@ -8,7 +8,7 @@ import AllTransactions from './components/AllTransactions';
 import Transaction from './components/Transaction';
 
 // Bootstrap
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 
 class App extends Component {
@@ -18,10 +18,10 @@ class App extends Component {
       transactions: [],
     }
     this.postHander = this.postHander.bind(this);
+    this.transactionsHandler = this.transactionsHandler.bind(this);
   }
 
   postHander() {
-
     axios.get('http://localhost:5000/')
       .then(res => this.setState(prevState => {
         return {
@@ -32,7 +32,18 @@ class App extends Component {
     console.log(this.state.transactions)
   }
 
-  componentDidMount() {
+  // the bug for componentDidMount could not be fixed?!?!?
+  // componentDidMount() {
+  //   axios.get('http://localhost:5000/')
+  //     .then(res => this.setState(prevState => {
+  //       return {
+  //         transactions: res.data
+  //       }
+  //     }))
+  //     .catch(err => console.log(err))
+  // }
+
+  transactionsHandler() {
     axios.get('http://localhost:5000/')
       .then(res => this.setState(prevState => {
         return {
@@ -46,6 +57,7 @@ class App extends Component {
     return (
       < div className="container text-center" >
         <Header />
+        <Button onClick={this.transactionsHandler} className="my-2" variant="outline-info" size="lg">Transactions</Button>
         <Container>
           <Row>
             {/* Summary of Balance, Income, and Expense */}

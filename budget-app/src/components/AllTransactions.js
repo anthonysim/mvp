@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 
 const AllTransactions = ({ items }) => {
-
+  // console.log(items)
   let transactions = items.map(({ payee, type, memo, amount }) => {
     if (type === 'Expense') {
       return <tr><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount.toFixed(2)}</th><th></th></tr>
