@@ -17,19 +17,8 @@ class App extends Component {
     this.state = {
       transactions: [],
     }
-    this.postHander = this.postHander.bind(this);
+    // this.postHander = this.postHander.bind(this);
     this.transactionsHandler = this.transactionsHandler.bind(this);
-  }
-
-  postHander() {
-    axios.get('http://localhost:5000/')
-      .then(res => this.setState(prevState => {
-        return {
-          transactions: res.data
-        }
-      }))
-      .catch(err => console.log(err))
-    console.log(this.state.transactions)
   }
 
   // the bug for componentDidMount could not be fixed?!?!?
@@ -62,7 +51,7 @@ class App extends Component {
           <Row>
             {/* Summary of Balance, Income, and Expense */}
             <Col><Totals data={this.state.transactions} /></Col>
-            <Col sm={8}><Transaction postFunc={this.postHander} /></Col>
+            <Col sm={8}><Transaction postFunc={this.transactionsHandler} /></Col>
           </Row>
         </Container>
         {/* List f all transactions below */}
