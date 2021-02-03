@@ -14,6 +14,11 @@ class Transaction extends Component {
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
 
+  // notes on button click the submit handler fires
+  // first it posts to the db,
+  // then it fires this.post.postFunc which will get a get request to update
+  // transactions to render on the page.
+
   onSubmitHandler(e) {
     e.preventDefault();
 
@@ -33,6 +38,7 @@ class Transaction extends Component {
           amount: "",
         }
       }))
+      .then(() => this.props.postFunc())
       .catch(err => console.error(err))
   }
 
@@ -40,7 +46,6 @@ class Transaction extends Component {
 
     return (
       <div >
-        <button onClick={this.props.postFunc}>Click Me!</button>
         <Form className="mt-sm-4 shadow p-3 mb-5 mt-1 bg-white rounded">
 
           <Form.Group controlId="exampleForm.ControlInput1">

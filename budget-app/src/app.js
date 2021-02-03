@@ -20,8 +20,15 @@ class App extends Component {
     this.postHander = this.postHander.bind(this);
   }
 
-  postHander() {
-    console.log('clicked')
+  postHander(e) {
+    axios.get('http://localhost:5000/')
+      .then(res => this.setState(prevState => {
+        return {
+          transactions: res.data
+        }
+      }))
+      .catch(err => console.log(err))
+    console.log(this.state.transactions)
   }
 
   componentDidMount() {
@@ -31,6 +38,7 @@ class App extends Component {
           transactions: res.data
         }
       }))
+      .catch(err => console.log(err))
   }
 
   render() {

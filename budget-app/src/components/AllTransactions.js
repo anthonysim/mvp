@@ -6,10 +6,10 @@ const AllTransactions = ({ items }) => {
 
   let transactions = items.map(({ payee, type, memo, amount }) => {
     if (type === 'Expense') {
-      return <tr><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount}</th><th></th></tr>
+      return <tr><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount.toFixed(2)}</th><th></th></tr>
 
     } else {
-      return <tr><th>{payee}</th><th>{type}</th><th>{memo}</th><th></th><th>${amount}</th></tr>
+      return <tr><th>{payee}</th><th>{type}</th><th>{memo}</th><th></th><th>${amount.toFixed(2)}</th></tr>
     }
   })
 
