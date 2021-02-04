@@ -5,22 +5,30 @@ import { MdUpdate } from 'react-icons/Md';
 
 
 const AllTransactions = ({ items }) => {
-  const deleteHandler = (e) => {
+
+  function updateHandler(e) {
     e.preventDefault();
-    console.log('delete clicked!')
+    console.log('updated!')
   }
 
 
 
-  let transactions = items.map(({ payee, type, memo, amount }) => {
+  function deleteHandler(id) {
+    // e.preventDefault();
+    console.log(id)
+  }
+
+
+
+  let transactions = items.map(({ reactKey, payee, type, memo, amount }) => {
 
     if (type === 'Expense') {
-      return <tr ><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount.toFixed(2)}</th><th></th><th><Button variant="outline-info" size="sm">Update</Button></th>
-        <th><Button variant="outline-danger" size="sm">Delete</Button></th></tr>
+      return <tr key={reactKey}><td>{payee}</td><td>{type}</td><td>{memo}</td><td>${amount.toFixed(2)}</td><td></td><td><Button onClick={updateHandler} variant="outline-info" size="sm">Update</Button></td>
+        <td><Button onClick={() => deleteHandler(reactKey)} variant="outline-danger" size="sm">Delete</Button></td></tr>
 
     } else {
-      return <tr ><th>{payee}</th><th>{type}</th><th>{memo}</th><th></th><th>${amount.toFixed(2)}</th><th><Button variant="outline-info" size="sm">Update</Button></th>
-        <th><Button variant="outline-danger" size="sm">Delete</Button></th></tr>
+      return <tr key={reactKey}><td>{payee}</td><td>{type}</td><td>{memo}</td><td></td><td>${amount.toFixed(2)}</td><td><Button onClick={updateHandler} variant="outline-info" size="sm">Update</Button></td>
+        <td><Button onClick={() => deleteHandler(reactKey)} variant="outline-danger" size="sm">Delete</Button></td></tr>
     }
   })
 
@@ -40,15 +48,6 @@ const AllTransactions = ({ items }) => {
         </thead>
         <tbody>
           {transactions}
-          {/* <tr>
-            <td>Landlord</td>
-            <td>Expense</td>
-            <th>Landlord wants 50% of paycheck.... wt 🦆?</th>
-            <th>$1600.00</th>
-            <th></th>
-            <th><Button variant="outline-info" size="sm">Update</Button></th>
-            <th><Button variant="outline-danger" size="sm">Delete</Button></th>
-          </tr> */}
         </tbody>
       </Table>
     </div >
