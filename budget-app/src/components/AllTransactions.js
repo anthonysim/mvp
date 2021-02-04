@@ -5,10 +5,11 @@ import { MdUpdate } from 'react-icons/Md';
 
 
 const AllTransactions = ({ items }) => {
-  // console.log(items)
-  let transactions = items.map(({ payee, type, memo, amount }) => {
+  console.log(items)
+  let transactions = items.map(({ reactkey, payee, type, memo, amount }) => {
+
     if (type === 'Expense') {
-      return <tr><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount.toFixed(2)}</th><th></th><th><Button variant="outline-info" size="sm">Update</Button></th>
+      return <tr key={reactKey}><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount.toFixed(2)}</th><th></th><th><Button variant="outline-info" size="sm">Update</Button></th>
         <th><Button variant="outline-danger" size="sm">Delete</Button></th></tr>
 
     } else {
@@ -27,13 +28,13 @@ const AllTransactions = ({ items }) => {
             <th>Memo</th>
             <th>Expense</th>
             <th>Income</th>
-            <th><MdUpdate className="text-info" /></th>
-            <th><FaTrashAlt className="text-danger" /></th>
+            <th><MdUpdate /></th>
+            <th><FaTrashAlt /></th>
           </tr>
         </thead>
         <tbody>
           {transactions}
-          <tr>
+          {/* <tr>
             <td>Landlord</td>
             <td>Expense</td>
             <th>Landlord wants 50% of paycheck.... wt 🦆?</th>
@@ -41,7 +42,7 @@ const AllTransactions = ({ items }) => {
             <th></th>
             <th><Button variant="outline-info" size="sm">Update</Button></th>
             <th><Button variant="outline-danger" size="sm">Delete</Button></th>
-          </tr>
+          </tr> */}
         </tbody>
       </Table>
     </div >
