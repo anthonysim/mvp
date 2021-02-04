@@ -55,7 +55,7 @@ class App extends Component {
           </Row>
         </Container>
         {/* List f all transactions below */}
-        <AllTransactions items={this.state.transactions} />
+        <AllTransactions items={this.state.transactions} deleteFunc={this.transactionsHandler} />
       </div >
     );
   }

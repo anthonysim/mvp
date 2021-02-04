@@ -1,34 +1,37 @@
 import React from "react";
+import axios from 'axios';
 import { Table, Button } from 'react-bootstrap';
 import { FaTrashAlt } from 'react-icons/fa';
 import { MdUpdate } from 'react-icons/Md';
 
 
-const AllTransactions = ({ items }) => {
+const AllTransactions = (props) => {
 
   function updateHandler(e) {
     e.preventDefault();
     console.log('updated!')
   }
 
+  function deleteHandler(e, mapID) {
+    e.preventDefault();
 
-
-  function deleteHandler(id) {
-    // e.preventDefault();
-    console.log(id)
+    axios.post('http://localhost:5000/deletetransaction', {
+      mapID,
+    })
+      .then(() => props.deleteFunc())
+      .then(() => console.log(`${mapID} deleted!`))
+      .catch(err => console.error(err))
   }
 
-
-
-  let transactions = items.map(({ reactKey, payee, type, memo, amount }) => {
+  let transactions = props.items.map(({ reactKey, payee, type, memo, amount }) => {
 
     if (type === 'Expense') {
       return <tr key={reactKey}><td>{payee}</td><td>{type}</td><td>{memo}</td><td>${amount.toFixed(2)}</td><td></td><td><Button onClick={updateHandler} variant="outline-info" size="sm">Update</Button></td>
-        <td><Button onClick={() => deleteHandler(reactKey)} variant="outline-danger" size="sm">Delete</Button></td></tr>
+        <td><Button onClick={(e) => deleteHandler(e, reactKey)} variant="outline-danger" size="sm">Delete</Button></td></tr>
 
     } else {
       return <tr key={reactKey}><td>{payee}</td><td>{type}</td><td>{memo}</td><td></td><td>${amount.toFixed(2)}</td><td><Button onClick={updateHandler} variant="outline-info" size="sm">Update</Button></td>
-        <td><Button onClick={() => deleteHandler(reactKey)} variant="outline-danger" size="sm">Delete</Button></td></tr>
+        <td><Button onClick={(e) => deleteHandler(e, reactKey)} variant="outline-danger" size="sm">Delete</Button></td></tr>
     }
   })
 

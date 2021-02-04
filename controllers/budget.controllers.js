@@ -32,3 +32,13 @@ exports.postTransaction = (req, res) => {
   }
 }
 
+exports.deleteTransaction = (req, res) => {
+  let { mapID } = req.body;
+  // console.log(mapID)
+
+  Tranasaction.deleteOne({ reactKey: mapID })
+    .then(deletedItem => res.json(deletedItem))
+    .catch(err => console.error(err))
+
+  res.end();
+}
