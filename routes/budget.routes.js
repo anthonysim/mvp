@@ -9,7 +9,7 @@ router.get('/transactions', getTransactions)
 // Posts one transaction
 router.post('/transaction', postTransaction)
 
-// deletes one transaction
+// Deletes one transaction
 router.delete('/transaction/:id', deleteTransaction)
 
 
