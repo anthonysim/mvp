@@ -15,12 +15,18 @@ const AllTransactions = (props) => {
   function deleteHandler(e, mapID) {
     e.preventDefault();
 
-    axios.post('http://localhost:5000/deletetransaction', {
-      mapID,
-    })
+    axios.delete(`http://localhost:5000/transaction/${mapID}`)
       .then(() => props.deleteFunc())
-      .then(() => console.log(`${mapID} deleted!`))
+      .then(() => console.log(`reactID ${mapID} deleted!`))
       .catch(err => console.error(err))
+
+
+    // axios.post('http://localhost:5000/deletetransaction', {
+    //   mapID,
+    // })
+    //   .then(() => props.deleteFunc())
+    //   .then(() => console.log(`${mapID} deleted!`))
+    //   .catch(err => console.error(err))
   }
 
   let transactions = props.items.map(({ reactKey, payee, type, memo, amount }) => {

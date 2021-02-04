@@ -2,15 +2,15 @@ const express = require('express')
 const router = express.Router()
 const { getTransactions, postTransaction, deleteTransaction } = require('../controllers/budget.controllers')
 
-// update route names to make more sense!
 
-// call this /transactions
+// Gets all the transactions in mongoDB
 router.get('/transactions', getTransactions)
-// call this transaction
+
+// Posts one transaction
 router.post('/transaction', postTransaction)
 
-// this should be a router.delete and /transaction/:id
-router.post('/deletetransaction', deleteTransaction)
+// deletes one transaction
+router.delete('/transaction/:id', deleteTransaction)
 
 
 module.exports = router;
