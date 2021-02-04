@@ -21,8 +21,7 @@ exports.postTransaction = (req, res) => {
     return;
   }
 
-  const reactKey = Date.now();
-  const transaction = new Tranasaction({ reactKey, payee, type, memo, amount });
+  const transaction = new Tranasaction({ payee, type, memo, amount });
 
   if (!transaction.amount) {
     res.json({ message: 'Please use numbers for amount field!' })

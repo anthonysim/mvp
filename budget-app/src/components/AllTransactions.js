@@ -6,14 +6,14 @@ import { MdUpdate } from 'react-icons/Md';
 
 const AllTransactions = ({ items }) => {
   console.log(items)
-  let transactions = items.map(({ reactkey, payee, type, memo, amount }) => {
+  let transactions = items.map(({ payee, type, memo, amount }) => {
 
     if (type === 'Expense') {
-      return <tr key={reactKey}><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount.toFixed(2)}</th><th></th><th><Button variant="outline-info" size="sm">Update</Button></th>
+      return <tr ><th>{payee}</th><th>{type}</th><th>{memo}</th><th>${amount.toFixed(2)}</th><th></th><th><Button variant="outline-info" size="sm">Update</Button></th>
         <th><Button variant="outline-danger" size="sm">Delete</Button></th></tr>
 
     } else {
-      return <tr><th>{payee}</th><th>{type}</th><th>{memo}</th><th></th><th>${amount.toFixed(2)}</th><th><Button variant="outline-info" size="sm">Update</Button></th>
+      return <tr ><th>{payee}</th><th>{type}</th><th>{memo}</th><th></th><th>${amount.toFixed(2)}</th><th><Button variant="outline-info" size="sm">Update</Button></th>
         <th><Button variant="outline-danger" size="sm">Delete</Button></th></tr>
     }
   })
