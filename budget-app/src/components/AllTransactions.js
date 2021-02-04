@@ -5,7 +5,13 @@ import { MdUpdate } from 'react-icons/Md';
 
 
 const AllTransactions = ({ items }) => {
-  console.log(items)
+  const deleteHandler = (e) => {
+    e.preventDefault();
+    console.log('delete clicked!')
+  }
+
+
+
   let transactions = items.map(({ payee, type, memo, amount }) => {
 
     if (type === 'Expense') {

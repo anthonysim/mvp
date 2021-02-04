@@ -3,10 +3,6 @@ const { Schema } = mongoose;
 
 
 const Transaction = new Schema({
-  reactKey: {
-    type: Number,
-    required: true
-  },
 
   payee: {
     type: String,
