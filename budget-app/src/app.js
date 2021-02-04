@@ -33,7 +33,7 @@ class App extends Component {
   // }
 
   transactionsHandler() {
-    axios.get('http://localhost:5000/')
+    axios.get('http://localhost:5000/transactions')
       .then(res => this.setState(prevState => {
         return {
           transactions: res.data

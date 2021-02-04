@@ -1,10 +1,15 @@
 const express = require('express')
 const router = express.Router()
-const { allTransactions, postTransaction, deleteTransaction } = require('../controllers/budget.controllers')
+const { getTransactions, postTransaction, deleteTransaction } = require('../controllers/budget.controllers')
 
+// update route names to make more sense!
 
-router.get('/', allTransactions)
-router.post('/addtransaction', postTransaction)
+// call this /transactions
+router.get('/transactions', getTransactions)
+// call this transaction
+router.post('/transaction', postTransaction)
+
+// this should be a router.delete and /transaction/:id
 router.post('/deletetransaction', deleteTransaction)
 
 

@@ -3,7 +3,7 @@ const Tranasaction = require('../models/budget.model')
 
 
 // gets all transactions
-exports.allTransactions = (req, res) => {
+exports.getTransactions = (req, res) => {
   Tranasaction.find({})
     .then(data => res.json(data))
     .catch(err => console.error(err))
