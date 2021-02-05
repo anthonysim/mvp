@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components Folder
 import Header from './components/Header';
@@ -21,6 +22,7 @@ class App extends Component {
     this.transactionsHandler = this.transactionsHandler.bind(this);
   }
 
+  // define a separate method
   // the bug for componentDidMount could not be fixed?!?!?
   // componentDidMount() {
   //   axios.get('http://localhost:5000/')
@@ -32,13 +34,11 @@ class App extends Component {
   //     .catch(err => console.log(err))
   // }
 
+
+
   transactionsHandler() {
     axios.get('http://localhost:5000/transactions')
-      .then(res => this.setState(prevState => {
-        return {
-          transactions: res.data
-        }
-      }))
+      .then(res => this.setState({ transactions: res.data }))
       .catch(err => console.log(err))
   }
 

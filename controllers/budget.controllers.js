@@ -1,10 +1,10 @@
 // import model
-const Tranasaction = require('../models/budget.model')
+const Transaction = require('../models/budget.model')
 
 
 // gets all transactions
 exports.getTransactions = (req, res) => {
-  Tranasaction.find({})
+  Transaction.find({})
     .then(data => res.json(data))
     .catch(err => console.error(err))
 }
@@ -20,7 +20,7 @@ exports.postTransaction = (req, res) => {
   }
 
   const reactKey = Date.now();
-  const transaction = new Tranasaction({ reactKey, payee, type, memo, amount });
+  const transaction = new Transaction({ reactKey, payee, type, memo, amount });
 
   if (!transaction.amount) {
     res.json({ message: 'Please use numbers for amount field!' })
@@ -34,10 +34,22 @@ exports.postTransaction = (req, res) => {
 
 exports.deleteTransaction = (req, res) => {
   const { id } = req.params;
-  console.log(id)
 
-  Tranasaction.deleteOne({ reactKey: id })
+  Transaction.deleteOne({ reactKey: id })
     .catch(err => console.error(err))
+
+  res.end();
+}
+
+exports.updateTransaction = (req, res) => {
+  console.log(req.body)
+
+  // const { id } = req.params;
+
+  // console.log(id)
+
+  // Transaction.updateOne({ reactKey: id }, { amount: 10.50 })
+  //   .catch(err => console.log(err))
 
   res.end();
 }

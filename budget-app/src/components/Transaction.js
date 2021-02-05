@@ -27,15 +27,12 @@ class Transaction extends Component {
       amount
     })
       .then(() => this.props.postFunc())
-      .then(this.setState(prevState => {
-        return {
-          payee: "",
-          type: "Income",
-          memo: "",
-          amount: "",
-        }
+      .then(this.setState({
+        payee: "",
+        type: "Income",
+        memo: "",
+        amount: ""
       }))
-
       .catch(err => console.error(err))
   }
 

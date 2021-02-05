@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { getTransactions, postTransaction, deleteTransaction } = require('../controllers/budget.controllers')
+const { getTransactions, postTransaction, deleteTransaction, updateTransaction } = require('../controllers/budget.controllers')
 
 
 // Gets all the transactions in mongoDB
@@ -11,6 +11,11 @@ router.post('/transaction', postTransaction)
 
 // Deletes one transaction
 router.delete('/transaction/:id', deleteTransaction)
+
+
+// Updates one transaction
+//put updates, patch replaces
+router.put('/transaction/', updateTransaction)
 
 
 module.exports = router;
